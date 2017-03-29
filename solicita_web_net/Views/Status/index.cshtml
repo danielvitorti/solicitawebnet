@@ -1,0 +1,40 @@
+﻿@model IEnumerable<solicita_web_net.Models.sol_status>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.sol_status_descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sol_status_data_cadastro)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.sol_status_descricao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sol_status_data_cadastro)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.sol_status_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.sol_status_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.sol_status_id })
+        </td>
+    </tr>
+}
+
+</table>

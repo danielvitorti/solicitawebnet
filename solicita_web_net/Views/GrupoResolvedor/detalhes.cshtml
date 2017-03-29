@@ -1,0 +1,35 @@
+﻿@model solicita_web_net.Models.sol_grupo_resolvedor
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>sol_grupo_resolvedor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.sol_grupo_resolvedor_descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sol_grupo_resolvedor_descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sol_grupo_resolvedor_data_cadastro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sol_grupo_resolvedor_data_cadastro)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.sol_grupo_resolvedor_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

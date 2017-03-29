@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - versão 1.0</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+    
+    
+    <div id="wrapper">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href=""@Url.Action("index", "Home")">Solicita Web Net - v1.0</a>
+            </div>
+        </nav>
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li class="sidebar-search">
+                            <div class="input-group custom-search-form">
+                                <input type="text" class="form-control" placeholder="Search...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                            <!-- /input-group -->
+                        </li>
+                        <li>
+                            <a href="@Url.Action("index", "Home")"><i class="fa fa-dashboard fa-fw"></i>Início</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("index", "Solicitacao")"><i class="fa fa-edit fa-fw"></i> Solicitações</a>
+                        </li>
+                      @if (Request.IsAuthenticated && User.IsInRole("ROLE_ADMINISTRADOR"))
+                      {
+                        <li>
+                            <a href="#"><i class="fa fa-wrench fa-fw"></i> Configurações<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="#">Produtos <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        <li>
+                                            <a href="@Url.Action("cadastrar", "Produto")">Cadastrar</a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("index", "Produto")">Listagem</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Responsáveis <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        <li>
+                                            <a href="@Url.Action("cadastrar", "Responsavel")">Cadastrar</a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("index", "Responsavel")">Listagem</a>
+                                        </li>
+                                    </ul>
+
+                                </li>
+
+                                <li>
+                                    <a href="#">Ocorrencias<span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        <li>
+                                            <a href="@Url.Action("cadastrar", "Ocorrencias")">Cadastrar</a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("index", "Responsavel")">Listagem</a>
+                                        </li>
+                                    </ul>
+
+                                </li>
+
+                                <li>
+                                    <a href="#">Exportações<span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        <li>
+                                            <a href="#">Solicitações</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Produtos</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Responsáveis</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Usuários</a>
+                                        </li>
+                                    </ul>
+
+                                </li>
+
+
+                                <li>
+                                    <a href="#">Backup<span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        <li>
+                                            <a href="#">Formato .csv</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Formato .sql</a>
+                                        </li>
+                                    </ul>
+
+                                </li>
+                                
+                            </ul>
+                            
+                        </li>
+
+
+                        <li>
+                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Relatórios<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="blank.html">Relatório 01</a>
+                                </li>
+                                <li>
+                                    <a href="login.html">Relatório 02</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                      }
+
+                        <li>
+                            <a href="@Url.Action("LogOff","Account")"><i class="fa fa-files-o  fa-fw"></i> Sair</a>
+                        </li>
+                    </ul>
+                  
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        
+</div>
+    <div id="page-wrapper">
+        @RenderBody()
+        <!--
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+        -->
+    </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,43 @@
+﻿@model solicita_web_net.Models.sol_responsavel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>sol_responsavel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.sol_responsavel_nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sol_responsavel_nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sol_responsavel_cargo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sol_responsavel_cargo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sol_responsavel_data_cadastro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sol_responsavel_data_cadastro)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.sol_responsavel_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
